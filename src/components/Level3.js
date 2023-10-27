@@ -11,7 +11,7 @@ function Level3({ progressToNextLevel }) {
 
   return (
     <div>
-      <h2>Level 3: Memory Card Game</h2>
+      <h2>Level 3: Code Trivia</h2>
       <button onClick={handleCompletion}>Complete Level (Placeholder)</button>
     </div>
   );

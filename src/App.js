@@ -1,3 +1,5 @@
+import { faBoxOpen, faFingerprint, faMemory, faPuzzlePiece, faTerminal } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookie from 'js-cookie';
 import React, { useEffect, useState } from 'react';
 import './App.css';
@@ -50,19 +52,19 @@ function App() {
     return (
       <div className="challenge-grid">
         <div className="challenge-item" id="challenge1" onClick={() => setViewedChallenge(1)}>
-            <img src="/path/to/icon1.png" alt="Challenge 1" />
+          <FontAwesomeIcon icon={faPuzzlePiece} />       
         </div>
         <div className="challenge-item" id="challenge2" onClick={() => setViewedChallenge(2)}>
-            <img src="/path/to/icon2.png" alt="Challenge 2" />
+          <FontAwesomeIcon icon={faFingerprint} />
         </div>
         <div className="challenge-item" id="challenge3" onClick={() => setViewedChallenge(3)}>
-            <img src="/path/to/icon3.png" alt="Challenge 3" />
+          <FontAwesomeIcon icon={faTerminal} />
         </div>
         <div className="challenge-item" id="challenge4" onClick={() => setViewedChallenge(4)}>
-            <img src="/path/to/icon4.png" alt="Challenge 4" />
+          <FontAwesomeIcon icon={faMemory} />
         </div>
         <div className="challenge-item" id="challenge5" onClick={() => setViewedChallenge(5)}>
-            <img src="/path/to/icon5.png" alt="Challenge 5" />
+          <FontAwesomeIcon icon={faBoxOpen} />
         </div>
       </div>
     );
@@ -72,10 +74,9 @@ function App() {
     <div className="App">
       <h1>Hostinger Hunt</h1>
       {renderCurrentLevel()}
-      <div class="progress-container">
-        <div class="progress-bar"></div>
+      <div className="progress-container">
+        <div className="progress-bar" style={{ width: `${(progressArray.filter(Boolean).length / 5) * 100}%` }}></div>
       </div>
-
     </div>
   );
 }
