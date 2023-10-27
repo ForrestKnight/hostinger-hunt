@@ -28,6 +28,47 @@
   color: #61dafb;
 }
 
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 20px;
+}
+
+.challenge-item {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-item img {
+  width: 50%; /* Adjust size as needed */
+  height: 50%;
+  transition: transform 0.3s ease; /* Animation effect */
+}
+
+/* Hover effect */
+.challenge-item:hover img {
+  transform: scale(1.1);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.progress-bar {
+  width: 0%;  /* Initially, it's set to 0. You'll update this dynamically */
+  height: 20px;
+  background-color: #0099cc;  /* Or any color of your choice */
+  text-align: center; 
+  line-height: 20px; 
+  color: white; 
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
