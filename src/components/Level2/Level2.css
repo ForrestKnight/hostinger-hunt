@@ -1,0 +1,115 @@
+.container {
+   padding: 30px;
+   background-color: #212121;
+   border-radius: 8px;
+   width: 80%;
+   margin: 0 auto;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   color: #CFCFCF; /* Using the same text color as App.css */
+}
+
+.textarea {
+   font-size: 20px;
+   width: 100%;
+   padding: 10px;
+   border-radius: 4px;
+   border: 1px solid #CFCFCF; /* Changed border color to match App's color */
+   margin-bottom: 20px;
+   background-color: #323232; /* Darker textarea to match App's theme */
+   color: #CFCFCF;
+}
+
+.button {
+   padding: 10px 20px;
+   background-color: #FFBE1A; /* Using the gold color from App.css for the button */
+   color: #212121; /* Dark text on light button background */
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+   background-color: #CFCFCF;
+   color: #212121;
+   transform: scale(1.05);
+}
+
+.success-message {
+   font-size: 24px;
+   color: green;
+   margin-top: 20px;
+}
+
+.error-message {
+   color: red;
+   font-weight: bold;
+   margin-top: 10px;
+}
+
+.level2-container {
+   padding: 2rem;
+   text-align: center;
+   max-width: 600px;
+   margin: auto;
+}
+
+.ciphered-text {
+   font-size: 1.5rem;
+   margin: 1rem 0;
+   font-style: italic;
+   color: #CFCFCF;
+}
+
+.user-input {
+   width: 100%;
+   padding: 0.5rem;
+   font-size: 1rem;
+   margin-bottom: 1rem;
+   background-color: #323232;
+   color: #CFCFCF;
+   border: 1px solid #CFCFCF;
+}
+
+.submit-button {
+   padding: 0.5rem 1rem;
+   font-size: 1rem;
+   background-color: #FFBE1A;
+   color: #212121;
+   border: none;
+   cursor: pointer;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+   background-color: #CFCFCF;
+   color: #212121;
+   transform: scale(1.05);
+}
+.matrix-style {
+   font-family: "Courier New", Courier, monospace;
+   font-size: 1.2em;
+   color: #00FF00; /* Matrix green */
+   background-color: #000; /* Black background */
+   padding: 20px;
+   border-radius: 8px;
+ }
+ 
+ .letter-animation {
+   display: inline-block;
+   animation: scrollLetter 1s steps(26, end) infinite, revealLetter 1s forwards;
+   overflow: hidden;
+   width: 1ch;  /* width of one character */
+ }
+ 
+ @keyframes scrollLetter {
+   0% { transform: translateY(0); }
+   100% { transform: translateY(-26em); }
+ }
+ 
+ @keyframes revealLetter {
+   100% { opacity: 1; }
+ }
+ 
+    
+ 

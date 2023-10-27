@@ -1,4 +1,5 @@
 .App {
+  font-family: 'Fira Code', monospace;
   text-align: center;
   height: 100vh;  /* Fill the entire screen */
   display: flex;

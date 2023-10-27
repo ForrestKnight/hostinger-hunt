@@ -1,0 +1,53 @@
+.container {
+   padding: 30px;
+   background-color: #212121;
+   border-radius: 8px;
+   width: 80%;
+   margin: 0 auto;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   color: #CFCFCF;
+}
+
+.option-box {
+  border: 1px solid #CFCFCF;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.option-box:hover, .option-box.selected {
+  border-color: #FFBE1A;
+  color: #FFBE1A;
+}
+
+.option-input {
+  display: none;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #FFBE1A;
+  color: #212121;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-top: 5px;
+}
+
+.button:hover {
+  background-color: #CFCFCF;
+  color: #212121;
+  transform: scale(1.05);
+}
+
+.error-message {
+   color: red;
+   font-weight: bold;
+   margin-top: 10px;
+}
