@@ -1,4 +1,4 @@
-import { faBoxOpen, faFingerprint, faMemory, faPuzzlePiece, faTerminal } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faChevronLeft, faFingerprint, faMemory, faPuzzlePiece, faTerminal } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookie from 'js-cookie';
 import React, { useEffect, useState } from 'react';
@@ -50,29 +50,46 @@ function App() {
 
   const renderHomeScreen = () => {
     return (
-      <div className="challenge-grid">
-        <div className="challenge-item" id="challenge1" onClick={() => setViewedChallenge(1)}>
-          <FontAwesomeIcon icon={faPuzzlePiece} />       
+      <div className="challenge-container">
+        <div className="challenge-row">
+          <div className="challenge-item" id="challenge1" onClick={() => setViewedChallenge(1)}>
+            <FontAwesomeIcon icon={faPuzzlePiece} size="2x"/>       
+          </div>
+          <div className="challenge-item" id="challenge2" onClick={() => setViewedChallenge(2)}>
+            <FontAwesomeIcon icon={faFingerprint} size="2x" />
+          </div>
+          <div className="challenge-item" id="challenge3" onClick={() => setViewedChallenge(3)}>
+            <FontAwesomeIcon icon={faTerminal} size="2x" />
+          </div>
         </div>
-        <div className="challenge-item" id="challenge2" onClick={() => setViewedChallenge(2)}>
-          <FontAwesomeIcon icon={faFingerprint} />
-        </div>
-        <div className="challenge-item" id="challenge3" onClick={() => setViewedChallenge(3)}>
-          <FontAwesomeIcon icon={faTerminal} />
-        </div>
-        <div className="challenge-item" id="challenge4" onClick={() => setViewedChallenge(4)}>
-          <FontAwesomeIcon icon={faMemory} />
-        </div>
-        <div className="challenge-item" id="challenge5" onClick={() => setViewedChallenge(5)}>
-          <FontAwesomeIcon icon={faBoxOpen} />
+        <div className="challenge-row">
+          <div className="challenge-item" id="challenge4" onClick={() => setViewedChallenge(4)}>
+            <FontAwesomeIcon icon={faMemory} size="2x" />
+          </div>
+          <div className="challenge-item" id="challenge5" onClick={() => setViewedChallenge(5)}>
+            <FontAwesomeIcon icon={faBoxOpen} size="2x" />
+          </div>
         </div>
       </div>
     );
   };
 
+
   return (
     <div className="App">
-      <h1>Hostinger Hunt</h1>
+      <div className="header-container">
+        { viewedChallenge && 
+          <div className="back-button">
+            <FontAwesomeIcon 
+              icon={faChevronLeft} 
+              onClick={() => setViewedChallenge(null)} 
+              style={{ cursor: "pointer" }}
+              size="xl"
+            />
+          </div>
+        }
+        <h1>Hostinger Hunt</h1>
+      </div>
       {renderCurrentLevel()}
       <div className="progress-container">
         <div className="progress-bar" style={{ width: `${(progressArray.filter(Boolean).length / 5) * 100}%` }}></div>

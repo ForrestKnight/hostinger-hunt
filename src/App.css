@@ -30,28 +30,37 @@
 
 .challenge-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-columns: repeat(3, 1fr); /* First row has 3 columns */
   gap: 20px;
+  margin-bottom: 20px; /* Space between the two rows */
+}
+
+.challenge-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenge-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .challenge-item {
-  width: 80px; /* Adjust size as needed */
+  width: 80px;
   height: 80px;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
 }
 
-.challenge-item img {
-  width: 50%; /* Adjust size as needed */
-  height: 50%;
-  transition: transform 0.3s ease; /* Animation effect */
-}
-
-/* Hover effect */
-.challenge-item:hover img {
+.challenge-item:hover {
   transform: scale(1.1);
 }
 
@@ -66,7 +75,21 @@
   background-color: #0099cc;  /* Or any color of your choice */
   text-align: center; 
   line-height: 20px; 
-  color: white; 
+  color: black; 
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: calc(50% - 320px);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @keyframes App-logo-spin {
