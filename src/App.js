@@ -53,21 +53,21 @@ function App() {
       <div className="challenge-container">
         <div className="challenge-row">
           <div className="challenge-item" id="challenge1" onClick={() => setViewedChallenge(1)}>
-            <FontAwesomeIcon icon={faPuzzlePiece} size="2x"/>       
+            <FontAwesomeIcon icon={faPuzzlePiece} size="3x"/>       
           </div>
           <div className="challenge-item" id="challenge2" onClick={() => setViewedChallenge(2)}>
-            <FontAwesomeIcon icon={faFingerprint} size="2x" />
+            <FontAwesomeIcon icon={faFingerprint} size="3x" />
           </div>
           <div className="challenge-item" id="challenge3" onClick={() => setViewedChallenge(3)}>
-            <FontAwesomeIcon icon={faTerminal} size="2x" />
+            <FontAwesomeIcon icon={faTerminal} size="3x" />
           </div>
         </div>
         <div className="challenge-row">
           <div className="challenge-item" id="challenge4" onClick={() => setViewedChallenge(4)}>
-            <FontAwesomeIcon icon={faMemory} size="2x" />
+            <FontAwesomeIcon icon={faMemory} size="3x" />
           </div>
           <div className="challenge-item" id="challenge5" onClick={() => setViewedChallenge(5)}>
-            <FontAwesomeIcon icon={faBoxOpen} size="2x" />
+            <FontAwesomeIcon icon={faBoxOpen} size="3x" />
           </div>
         </div>
       </div>
@@ -92,8 +92,11 @@ function App() {
       </div>
       {renderCurrentLevel()}
       <div className="progress-container">
+        <div className="vertical-line"></div>
+        <div className="vertical-line"></div>
         <div className="progress-bar" style={{ width: `${(progressArray.filter(Boolean).length / 5) * 100}%` }}></div>
       </div>
+
     </div>
   );
 }
