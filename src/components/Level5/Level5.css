@@ -24,6 +24,7 @@
  .box {
    width: 100px;
    height: 100px;
+   border: 2px solid #212121;
    background-color: #CFCFCF;
    border-radius: 8px;
    display: flex;
@@ -35,8 +36,8 @@
  }
  
  .box:hover {
-   transform: scale(1.05);
    border-color: #FFBE1A;
+   background-color: #212121;
  }
  
  .box.open {

@@ -12,21 +12,25 @@ function Level5({ progressToNextLevel }) {
   const handleClickBox = index => {
     if (index === chosenBox) {
       setIsCorrect(true);
-    } else {
-      setIsCorrect(false);
-    }
-    setShowFeedback(true);
-    
-    const newBoxes = [...boxes];
-    newBoxes[index] = true;
-    setBoxes(newBoxes);
-
-    if (isCorrect) {
+      setShowFeedback(true);
+      
+      const newBoxes = [...boxes];
+      newBoxes[index] = true;
+      setBoxes(newBoxes);
+  
       setTimeout(() => {
         handleCompletion();
-      }, 2000);  // Delay the completion message to let the user see they've found the treasure
+      }, 1500);  // Delay the completion message to let the user see they've found the treasure
+    } else {
+      setIsCorrect(false);
+      setShowFeedback(true);
+      
+      const newBoxes = [...boxes];
+      newBoxes[index] = true;
+      setBoxes(newBoxes);
     }
   };
+  
 
   const handleCompletion = () => {
     console.log("Congratulations! You've completed the treasure hunt!");
@@ -54,7 +58,7 @@ function Level5({ progressToNextLevel }) {
       </div>
       {showFeedback && (
         <div style={{ color: isCorrect ? 'white' : 'red' }}>
-          {isCorrect ? "Correct!" : "Wrong Answer, Try Again!"}
+          {isCorrect ? "A bug. That's Correct!" : "Wrong Answer, Try Again!"}
         </div>
       )}
     </div>

@@ -29,15 +29,22 @@ function Level3({ progressToNextLevel }) {
     const correct = selectedAnswer === questions[currentQuestion].correctAnswer;
     setIsCorrect(correct);
     setShowFeedback(true);
-
+  
     setTimeout(() => {
       if (correct) {
-        setCurrentQuestion((prev) => prev + 1);
-        setSelectedAnswer(null);
+        if (currentQuestion + 1 < questions.length) {
+          setCurrentQuestion((prev) => prev + 1);
+          setSelectedAnswer(null);
+          setShowFeedback(false);
+        } else {
+          // User has completed all questions
+          progressToNextLevel();
+        }
+      } else {
+        setShowFeedback(false);
       }
-      setShowFeedback(false);
-    }, 2000);
-};
+    }, 1500);
+  };  
 
   return (
     <div className="container">
@@ -62,7 +69,9 @@ function Level3({ progressToNextLevel }) {
       ))}
       {!showFeedback && <button className="button" onClick={handleAnswer}>Submit Answer</button>}
       {showFeedback && (
-        <div>{isCorrect ? "Correct!" : "Wrong Answer. Try Again!"}</div>
+        <div style={{ color: isCorrect ? 'white' : 'red' }}>
+          {isCorrect ? "Correct!" : "Wrong Answer, Try Again!"}
+        </div>
       )}
     </div>
   );

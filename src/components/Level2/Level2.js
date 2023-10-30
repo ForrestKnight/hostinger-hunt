@@ -15,14 +15,11 @@ function Level2({ progressToNextLevel }) {
   const handleCompletion = () => {
     if (userInput.trim() === originalMessage) {
       setIsSuccess(true);
-      setTimeout(() => {
-        // setIsSuccess(false);
-        setTimeout(progressToNextLevel, 1000);
-      }, 1000);
+      setTimeout(progressToNextLevel, 1500);
     } else {
       setErrorMessage('Wrong Answer. Try Again!');
       setTimeout(() => {
-        setErrorMessage(''); // Hide error message after 5 seconds
+        setErrorMessage('');
       }, 3000);
     }
   };

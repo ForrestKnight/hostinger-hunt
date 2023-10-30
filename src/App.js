@@ -12,6 +12,7 @@ import Level5 from './components/Level5/Level5';
 function App() {
   const [progressArray, setProgressArray] = useState([false, false, false, false, false]);
   const [viewedChallenge, setViewedChallenge] = useState(null);
+  const [levelCompletedAnimation, setLevelCompletedAnimation] = useState(false);
 
   useEffect(() => {
     const savedProgress = Cookie.get('progressArray');
@@ -28,10 +29,21 @@ function App() {
     let updatedProgress = [...progressArray];
     updatedProgress[levelCompleted - 1] = true;
     setProgressArray(updatedProgress);
-    setViewedChallenge(null);  // Return to home screen after completing a level
+
+    // Trigger the completion animation
+    setLevelCompletedAnimation(true);
+    
+    // After the animation, return to the home screen
+    setTimeout(() => {
+        setLevelCompletedAnimation(false);
+        setViewedChallenge(null);
+    }, 2000);  // 2 seconds delay
   };
 
   const renderCurrentLevel = () => {
+    if (levelCompletedAnimation) {
+      return renderCompletionAnimation();
+    }
     switch (viewedChallenge) {
       case 1:
         return <Level1 progressToNextLevel={() => updateProgress(1)} />;
@@ -48,31 +60,40 @@ function App() {
     }
   };
 
+  const renderCompletionAnimation = () => {
+    return (
+        <div className="completion-animation">
+            🎉 Level Completed! 🎉
+        </div>
+    );
+  };
+
   const renderHomeScreen = () => {
     return (
       <div className="challenge-container">
         <div className="challenge-row">
-          <div className="challenge-item" id="challenge1" onClick={() => setViewedChallenge(1)}>
+          <div className={`challenge-item ${progressArray[0] ? "completed" : ""}`} id="challenge1" onClick={() => setViewedChallenge(1)}>
             <FontAwesomeIcon icon={faPuzzlePiece} size="3x"/>       
           </div>
-          <div className="challenge-item" id="challenge2" onClick={() => setViewedChallenge(2)}>
+          <div className={`challenge-item ${progressArray[1] ? "completed" : ""}`} id="challenge2" onClick={() => setViewedChallenge(2)}>
             <FontAwesomeIcon icon={faFingerprint} size="3x" />
           </div>
-          <div className="challenge-item" id="challenge3" onClick={() => setViewedChallenge(3)}>
+          <div className={`challenge-item ${progressArray[2] ? "completed" : ""}`} id="challenge3" onClick={() => setViewedChallenge(3)}>
             <FontAwesomeIcon icon={faTerminal} size="3x" />
           </div>
         </div>
         <div className="challenge-row">
-          <div className="challenge-item" id="challenge4" onClick={() => setViewedChallenge(4)}>
+          <div className={`challenge-item ${progressArray[3] ? "completed" : ""}`} id="challenge4" onClick={() => setViewedChallenge(4)}>
             <FontAwesomeIcon icon={faMemory} size="3x" />
           </div>
-          <div className="challenge-item" id="challenge5" onClick={() => setViewedChallenge(5)}>
+          <div className={`challenge-item ${progressArray[4] ? "completed" : ""}`} id="challenge5" onClick={() => setViewedChallenge(5)}>
             <FontAwesomeIcon icon={faBoxOpen} size="3x" />
           </div>
         </div>
       </div>
     );
   };
+  
 
 
   return (
