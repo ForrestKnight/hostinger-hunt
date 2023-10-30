@@ -6,8 +6,8 @@ import './App.css';
 import Level1 from './components/Level1/Level1';
 import Level2 from './components/Level2/Level2';
 import Level3 from './components/Level3/Level3';
-import Level4 from './components/Level4';
-import Level5 from './components/Level5';
+import Level4 from './components/Level4/Level4';
+import Level5 from './components/Level5/Level5';
 
 function App() {
   const [progressArray, setProgressArray] = useState([false, false, false, false, false]);

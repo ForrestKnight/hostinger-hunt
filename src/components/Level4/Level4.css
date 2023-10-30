@@ -1,0 +1,80 @@
+/* Reusing the container styling from Level3.css */
+.level4-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 30px;
+   background-color: #212121;
+   border-radius: 8px;
+   width: 80%;
+   margin: 0 auto;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   color: #CFCFCF;
+}
+
+.card:hover, .card.flipped {
+  border-color: #FFBE1A;
+  color: #FFBE1A;
+}
+
+/* Reusing the button styling from Level3.css */
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #FFBE1A;
+  color: #212121;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-top: 5px;
+}
+
+.button:hover {
+  background-color: #CFCFCF;
+  color: #212121;
+  transform: scale(1.05);
+}
+
+/* This error message style can be kept if you plan to add error feedback in Level4 */
+.error-message {
+   color: red;
+   font-weight: bold;
+   margin-top: 10px;
+}
+
+/* Adjusting the card-grid for a 4x4 layout */
+.card-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);  /* Four cards in a row */
+   gap: 16px; /* Spacing between cards */
+   max-width: 280px; /* Adjust this based on card size and gap */
+   margin: 20px auto; /* Centering the grid */
+   justify-content: center;  /* Ensures the grid itself is centered */
+
+ }
+ 
+ /* Adjust the card styling to fit the grid layout */
+ .card {
+   border: 1px solid #CFCFCF;
+   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+   padding: 10px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center; /* Center the emoji/symbols */
+   font-size: 2rem;  /* Increase emoji size */
+   cursor: pointer;
+   width: 60px; /* You might need to adjust this based on the card-grid max-width */
+   height: 60px;
+ }
+
+ .card:hover, .card.flipped {
+   border-color: #FFBE1A;
+   color: #FFBE1A;
+ }
+ 
+.card.matched {
+  background-color: #FFBE1A;
+  color: #212121;  /* Changing text color to contrast against the gold background */
+}
