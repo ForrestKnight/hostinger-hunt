@@ -20,7 +20,7 @@ function Level2({ progressToNextLevel }) {
         setTimeout(progressToNextLevel, 1000);
       }, 1000);
     } else {
-      setErrorMessage('Try Again!');
+      setErrorMessage('Wrong Answer. Try Again!');
       setTimeout(() => {
         setErrorMessage(''); // Hide error message after 5 seconds
       }, 3000);

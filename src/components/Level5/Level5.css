@@ -1,0 +1,45 @@
+.level5-container {
+   padding: 30px;
+   background-color: #212121;
+   border-radius: 8px;
+   width: 80%;
+   margin: 0 auto;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   color: #CFCFCF;
+   text-align: center;
+ }
+ 
+ .riddle {
+   font-weight: bold;
+   margin: 40px 0;
+ }
+ 
+ .box-grid {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 15px;
+ }
+ 
+ .box {
+   width: 100px;
+   height: 100px;
+   background-color: #CFCFCF;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   font-size: 1.5rem;
+   transition: transform 0.3s ease;
+ }
+ 
+ .box:hover {
+   transform: scale(1.05);
+   border-color: #FFBE1A;
+ }
+ 
+ .box.open {
+   background-color: #FFBE1A;
+ }
+ 

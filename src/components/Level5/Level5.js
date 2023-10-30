@@ -1,17 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Level5.css';
 
 function Level5({ progressToNextLevel }) {
+  const [boxes, setBoxes] = useState([false, false, false, false, false]);
+  const emojis = ["💻", "🐞", "📖", "⚙️", "🚀"];
+  const chosenBox = 1; // The index of the "bug" emoji which is the correct answer to the riddle
 
-  // Placeholder logic for now
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
+
+  const handleClickBox = index => {
+    if (index === chosenBox) {
+      setIsCorrect(true);
+    } else {
+      setIsCorrect(false);
+    }
+    setShowFeedback(true);
+    
+    const newBoxes = [...boxes];
+    newBoxes[index] = true;
+    setBoxes(newBoxes);
+
+    if (isCorrect) {
+      setTimeout(() => {
+        handleCompletion();
+      }, 2000);  // Delay the completion message to let the user see they've found the treasure
+    }
+  };
+
   const handleCompletion = () => {
-    // Here you can handle the final celebration or animation
     console.log("Congratulations! You've completed the treasure hunt!");
+    // You can also trigger an animation or effect here
+    progressToNextLevel();
   };
 
   return (
-    <div>
-      <h2>Level 5: Mystery Challenge</h2>
-      <button onClick={handleCompletion}>Reveal the Treasure (Placeholder)</button>
+    <div className="level5-container">
+      <h2>Level 5: Hostinger Mystery Box</h2>
+      <p>Answer the riddle related to coding and select the right digital box.</p>
+      <p className="riddle">The more you code, the more of me there is.<br />
+        I may be gone for now but you can’t get rid of me forever.<br />
+        What am I?</p>
+      <div className="box-grid">
+        {boxes.map((box, index) => (
+          <div 
+            key={index}
+            className={`box ${box ? "open" : ""}`}
+            onClick={() => handleClickBox(index)}
+          >
+            {(box && index === chosenBox) ? "🏆" : emojis[index]}  {/* Displays trophy if correct box is clicked */}
+          </div>
+        ))}
+      </div>
+      {showFeedback && (
+        <div style={{ color: isCorrect ? 'white' : 'red' }}>
+          {isCorrect ? "Correct!" : "Wrong Answer, Try Again!"}
+        </div>
+      )}
     </div>
   );
 }

@@ -89,6 +89,11 @@
   box-shadow: 0 0 20px 2px #FFBE1A;
 }
 
+.challenge-item.completed {
+  border-color: #FFBE1A;
+  color: #FFBE1A;
+}
+
 .progress-container {
   width: calc(3 * 140px + 2 * 80px); /* Width based on your challenge items */
   background-color: #323232; /* Slightly different shade for contrast */

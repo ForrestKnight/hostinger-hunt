@@ -19,10 +19,10 @@ function Level3({ progressToNextLevel }) {
       correctAnswer: 1
     },
     {
-      question: 'Which of these is NOT a primitive data type in JavaScript?',
-      options: ['Number', 'String', 'Boolean', 'Array'],
+      question: 'Which one is NOT a feature of Hostinger’s Premium Shared Hosting?',
+      options: ['Free Domain', 'Weekly Backups', '100 Websites', 'Free Breakfast'],
       correctAnswer: 3
-    }
+    }     
   ];
 
   const handleAnswer = () => {
@@ -62,7 +62,7 @@ function Level3({ progressToNextLevel }) {
       ))}
       {!showFeedback && <button className="button" onClick={handleAnswer}>Submit Answer</button>}
       {showFeedback && (
-        <div>{isCorrect ? "Correct!" : "Wrong Answer, Try Again!"}</div>
+        <div>{isCorrect ? "Correct!" : "Wrong Answer. Try Again!"}</div>
       )}
     </div>
   );
