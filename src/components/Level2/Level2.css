@@ -1,11 +1,5 @@
-.container {
-   padding: 30px;
-   background-color: #212121;
-   border-radius: 8px;
-   width: 80%;
-   margin: 0 auto;
-   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-   color: #CFCFCF; /* Using the same text color as App.css */
+.level2-container {
+   width: 100%;
 }
 
 .textarea {

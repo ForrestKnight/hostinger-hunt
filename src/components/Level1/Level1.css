@@ -1,0 +1,97 @@
+.level1-container {
+   background-color: #212121;
+   padding: 2em;
+   border-radius: 10px;
+   max-width: 700px;
+   margin: 30px auto;
+}
+
+h2 {
+   padding-bottom: 10px;
+   margin-bottom: 20px;
+   text-align: center;
+   color: #CFCFCF;
+}
+
+.word-grid {
+   display: flex;
+   flex-direction: column;
+   border: 3px solid #CFCFCF;
+   border-radius: 8px;
+   max-width: 620px;
+   margin: 20px auto;
+}
+
+.words-to-find-grid {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);  /* Creates 5 columns */
+   grid-gap: 10px;
+   justify-items: center;
+   max-width: 620px;
+   margin: 20px auto;
+}
+
+.word-item {
+   text-align: center;
+   color: #CFCFCF;
+}
+
+.grid-row {
+   display: flex;
+   justify-content: center;
+}
+
+.grid-letter {
+   width: 50px;
+   height: 50px;
+   font-size: 2em; /* Adjusted font size */
+   color: #CFCFCF; /* Adjusted font color */
+   border: none;
+   background-color: #212121; /* Adjusted background color to match the container */
+   text-align: center;
+   line-height: 50px;
+   cursor: pointer;
+   transition: background-color 0.2s, color 0.2s;
+   padding: 0;
+   margin: 0;
+}
+
+.grid-letter:hover {
+   background-color: #007BFF;
+   color: white;
+}
+
+.grid-letter.selected {
+   color: green;
+}
+
+.grid-letter.success {
+   color: #FFBE1A;
+}
+
+h3 {
+   margin-top: 20px;
+   text-align: center;
+   color: #CFCFCF;
+}
+
+.button {
+   padding: 10px 15px;
+   margin-top: 20px;
+   background-color: #007BFF;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.2s;
+   display: block;
+   margin: 20px auto;
+}
+
+.button:hover {
+   background-color: #0056b3;
+}
+
+.button:active {
+   background-color: #003680;
+}

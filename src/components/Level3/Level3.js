@@ -47,7 +47,7 @@ function Level3({ progressToNextLevel }) {
   };  
 
   return (
-    <div className="container">
+    <div className="level3-container">
       <h2>Level 3: Code Trivia</h2>
       <p className="trivia-question">{questions[currentQuestion].question}</p>
       {questions[currentQuestion].options.map((option, index) => (
