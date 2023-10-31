@@ -1,14 +1,12 @@
-.level1-container {
-   background-color: #212121;
-   padding: 2em;
-   border-radius: 10px;
-   max-width: 700px;
-   margin: 30px auto;
-}
-
 h2 {
    padding-bottom: 10px;
    margin-bottom: 20px;
+   text-align: center;
+   color: #CFCFCF;
+}
+
+h3 {
+   margin-top: 20px;
    text-align: center;
    color: #CFCFCF;
 }
@@ -57,7 +55,7 @@ h2 {
 }
 
 .grid-letter:hover {
-   background-color: #007BFF;
+   background-color: rgb(69, 69, 69);
    color: white;
 }
 
@@ -67,31 +65,4 @@ h2 {
 
 .grid-letter.success {
    color: #FFBE1A;
-}
-
-h3 {
-   margin-top: 20px;
-   text-align: center;
-   color: #CFCFCF;
-}
-
-.button {
-   padding: 10px 15px;
-   margin-top: 20px;
-   background-color: #007BFF;
-   color: white;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   transition: background-color 0.2s;
-   display: block;
-   margin: 20px auto;
-}
-
-.button:hover {
-   background-color: #0056b3;
-}
-
-.button:active {
-   background-color: #003680;
 }

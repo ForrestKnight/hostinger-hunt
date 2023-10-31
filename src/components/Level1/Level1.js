@@ -73,7 +73,7 @@ function Level1({ progressToNextLevel }) {
   
 
     return (
-      <div className="level1-container">
+      <div className="container">
           <h2>Level 1: Code Terminology Word Search</h2>
           <div className="word-grid">
               {grid.map((row, rowIndex) => (

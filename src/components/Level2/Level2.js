@@ -25,7 +25,7 @@ function Level2({ progressToNextLevel }) {
   };
 
   return (
-    <div className="level2-container">
+    <div className="container">
       <h2>Decryption Challenge</h2>
       <p><strong>Unlock the secret!</strong> Decode the encrypted message below to progress.</p>
       <p className="matrix-style">{cipheredMessage}</p>
