@@ -40,7 +40,7 @@ function Level5({ progressToNextLevel }) {
 
   return (
     <div className="container">
-      <h2>Level 5: Hostinger Mystery Box</h2>
+      <h2>Riddle Reveal</h2>
       <p>Answer the riddle related to coding and select the right digital box.</p>
       <p className="riddle">The more you code, the more of me there is.<br />
         I may be gone for now but you can’t get rid of me forever.<br />

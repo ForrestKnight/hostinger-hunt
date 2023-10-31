@@ -1,4 +1,4 @@
-import { faBoxOpen, faChevronLeft, faFingerprint, faMemory, faPuzzlePiece, faTerminal } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faChevronLeft, faFingerprint, faMagnifyingGlass, faMemory, faTerminal } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookie from 'js-cookie';
 import React, { useEffect, useState } from 'react';
@@ -73,7 +73,7 @@ function App() {
       <div className="challenge-container">
         <div className="challenge-row">
           <div className={`challenge-item ${progressArray[0] ? "completed" : ""}`} id="challenge1" onClick={() => setViewedChallenge(1)}>
-            <FontAwesomeIcon icon={faPuzzlePiece} size="3x"/>       
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="3x"/>       
           </div>
           <div className={`challenge-item ${progressArray[1] ? "completed" : ""}`} id="challenge2" onClick={() => setViewedChallenge(2)}>
             <FontAwesomeIcon icon={faFingerprint} size="3x" />

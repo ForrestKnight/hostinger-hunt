@@ -4,22 +4,22 @@ import './Level1.css';
 function Level1({ progressToNextLevel }) {
     const [selectedWord, setSelectedWord] = useState("");
     const [selectedPositions, setSelectedPositions] = useState([]);
-    const wordsToFind = ["CODE", "HOST", "WEB", "HTML", "SERVER", "DOMAIN", "SCRIPT", "JAVASCRIPT", "DATABASE", "NETWORK"];
+    const wordsToFind = ["CODE", "HOST", "WEB", "HTML", "SERVER", "DOMAIN", "DEVNOTES", "JAVASCRIPT", "DATABASE", "NETWORK"];
     const [foundWords, setFoundWords] = useState([]);
 
     const grid = [
-      ['A', 'C', 'O', 'D', 'E', 'F', 'G', 'S', 'C', 'R', 'I', 'P'],
-      ['H', 'H', 'O', 'S', 'T', 'X', 'J', 'K', 'T', 'W', 'E', 'B'],
-      ['T', 'R', 'W', 'E', 'B', 'T', 'Y', 'U', 'I', 'D', 'A', 'T'],
-      ['A', 'O', 'C', 'D', 'E', 'V', 'B', 'N', 'M', 'R', 'V', 'B'],
-      ['D', 'D', 'O', 'M', 'A', 'I', 'N', 'G', 'T', 'H', 'O', 'S'],
-      ['N', 'E', 'H', 'O', 'S', 'T', 'K', 'E', 'R', 'E', 'G', 'A'],
-      ['J', 'A', 'J', 'A', 'V', 'A', 'R', 'I', 'P', 'T', 'H', 'J'],
-      ['A', 'S', 'D', 'F', 'G', 'H', 'W', 'E', 'R', 'T', 'Y', 'U'],
-      ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'L', 'K'],
-      ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Q', 'W', 'E', 'R', 'T'],
-      ['Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J'],
-      ['H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'A']
+      ['A', 'C', 'O', 'D', 'E', 'F', 'G', 'S', 'C', 'R', 'I', 'N'],
+      ['H', 'H', 'L', 'S', 'P', 'X', 'J', 'K', 'T', 'W', 'E', 'B'],
+      ['J', 'R', 'W', 'D', 'B', 'T', 'Y', 'U', 'I', 'T', 'A', 'T'],
+      ['A', 'A', 'C', 'O', 'E', 'V', 'S', 'N', 'W', 'R', 'V', 'B'],
+      ['D', 'D', 'V', 'M', 'A', 'I', 'E', 'O', 'T', 'H', 'O', 'S'],
+      ['N', 'A', 'H', 'A', 'S', 'T', 'R', 'E', 'R', 'E', 'G', 'A'],
+      ['J', 'T', 'J', 'I', 'S', 'K', 'V', 'L', 'M', 'T', 'H', 'H'],
+      ['A', 'A', 'D', 'N', 'G', 'C', 'E', 'E', 'R', 'T', 'Y', 'O'],
+      ['Q', 'B', 'E', 'R', 'T', 'Y', 'R', 'I', 'O', 'P', 'L', 'S'],
+      ['Z', 'A', 'C', 'V', 'B', 'N', 'M', 'I', 'W', 'E', 'R', 'T'],
+      ['Y', 'S', 'I', 'O', 'P', 'A', 'S', 'D', 'P', 'G', 'H', 'J'],
+      ['H', 'E', 'K', 'L', 'D', 'E', 'V', 'N', 'O', 'T', 'E', 'S']
     ];
   
     const [letterColors, setLetterColors] = useState(Array(grid.length).fill().map(() => Array(grid[0].length).fill("#CFCFCF")));
@@ -69,12 +69,10 @@ function Level1({ progressToNextLevel }) {
           progressToNextLevel();
       }
     }
-  
-  
 
     return (
       <div className="container">
-          <h2>Level 1: Code Terminology Word Search</h2>
+          <h2>Code Terminology Word Search</h2>
           <div className="word-grid">
               {grid.map((row, rowIndex) => (
                   <div key={rowIndex} className="grid-row">
