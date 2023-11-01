@@ -219,3 +219,43 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add the row-moving animation */
+.challenge-container.rows-moved .top-row {
+  animation: moveUpwards 3s forwards;
+}
+
+.challenge-container.rows-moved .bottom-row {
+  animation: moveDownwards 3s forwards;
+}
+
+@keyframes moveUpwards {
+  to {
+    transform: translateY(-160px); /* Adjust as necessary */
+  }
+}
+
+@keyframes moveDownwards {
+  to {
+    transform: translateY(160px); /* Adjust as necessary */
+  }
+}
+
+.challenge-container {
+  position: relative;
+}
+
+.video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+  height: 315px;
+}
+
+/* Show the video when videoReveal is true */
+.challenge-container.video-reveal .video-container {
+  opacity: 1; /* Visible */
+}
+

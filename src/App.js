@@ -13,6 +13,8 @@ function App() {
   const [progressArray, setProgressArray] = useState([false, false, false, false, false]);
   const [viewedChallenge, setViewedChallenge] = useState(null);
   const [levelCompletedAnimation, setLevelCompletedAnimation] = useState(false);
+  const [videoReveal, setVideoReveal] = useState(false);
+  const [rowsMoved, setRowsMoved] = useState(false);
 
   useEffect(() => {
     const savedProgress = Cookie.get('progressArray');
@@ -25,20 +27,39 @@ function App() {
     Cookie.set('progressArray', JSON.stringify(progressArray));
   }, [progressArray]);
 
-  const updateProgress = (levelCompleted) => {
-    let updatedProgress = [...progressArray];
-    updatedProgress[levelCompleted - 1] = true;
-    setProgressArray(updatedProgress);
+  useEffect(() => {
+    const allLevelsCompleted = progressArray.every(Boolean);
+    if (allLevelsCompleted && !rowsMoved) {
+      setRowsMoved(true); // Trigger rows moving
+  
+      // After rows animation is complete, reveal the video
+      setTimeout(() => {
+        setVideoReveal(true);
+      }, 3000); // Assuming your row animations are 3 seconds
+    }
+  }, [progressArray, rowsMoved]);  
 
-    // Trigger the completion animation
-    setLevelCompletedAnimation(true);
-    
-    // After the animation, return to the home screen
-    setTimeout(() => {
-        setLevelCompletedAnimation(false);
-        setViewedChallenge(null);
-    }, 2000);  // 2 seconds delay
+  const updateProgress = (levelCompleted, completeAll = false) => {
+    let updatedProgress = [...progressArray];
+    if (completeAll) {
+      updatedProgress = [true, true, true, true, true];
+    } else {
+      updatedProgress[levelCompleted - 1] = true;
+    }
+    setProgressArray(updatedProgress);
+  
+    if (!completeAll) {
+      // Trigger the completion animation
+      setLevelCompletedAnimation(true);
+      
+      // After the animation, return to the home screen
+      setTimeout(() => {
+          setLevelCompletedAnimation(false);
+          setViewedChallenge(null);
+      }, 2000);  // 2 seconds delay
+    }
   };
+  
 
   const renderCurrentLevel = () => {
     if (levelCompletedAnimation) {
@@ -69,9 +90,10 @@ function App() {
   };
 
   const renderHomeScreen = () => {
+
     return (
-      <div className="challenge-container">
-        <div className="challenge-row">
+      <div className={`challenge-container ${rowsMoved ? "rows-moved" : ""} ${videoReveal ? "video-reveal" : ""}`}>
+        <div className="challenge-row top-row">
           <div className={`challenge-item ${progressArray[0] ? "completed" : ""}`} id="challenge1" onClick={() => setViewedChallenge(1)}>
             <FontAwesomeIcon icon={faMagnifyingGlass} size="3x"/>       
           </div>
@@ -82,7 +104,19 @@ function App() {
             <FontAwesomeIcon icon={faTerminal} size="3x" />
           </div>
         </div>
-        <div className="challenge-row">
+        {videoReveal && 
+          <div className="video-container">
+            <iframe 
+              title="Congratulations! You're a Winner!"   
+              src="https://youtube.com/embed/KDN40kvDcq4" 
+              width="560" 
+              height="315"
+              style={{ opacity: videoReveal ? 1 : 0, pointerEvents: videoReveal ? 'auto' : 'none' }}
+              allowFullScreen>
+            </iframe>
+          </div>
+        }
+        <div className="challenge-row bottom-row">
           <div className={`challenge-item ${progressArray[3] ? "completed" : ""}`} id="challenge4" onClick={() => setViewedChallenge(4)}>
             <FontAwesomeIcon icon={faMemory} size="3x" />
           </div>
