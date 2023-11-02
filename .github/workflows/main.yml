@@ -1,0 +1,36 @@
+name: Generate build and deploy React to Hostinger
+
+on:
+  push:
+    branches:
+      - master  # Trigger the workflow on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies and Build
+      run: |
+        npm install
+        npm run build
+
+    - name: Deploy to Hostinger
+      run: |
+        rsync -av --delete build/ u277242250.hostingerhunt.com@185.28.21.157:public_html
+      env:
+        DEPLOY_KEY: ${{ secrets.SSH_KEY }}
+
+    - name: Install SSH Client
+      run: sudo apt-get install -y openssh-client
+
+    - name: Add SSH Key
+      run: |
+        echo "${{ secrets.SSH_KEY }}" > deploy_key
+        chmod 600 deploy_key
+        ssh-add deploy_key
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
