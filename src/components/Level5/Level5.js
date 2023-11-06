@@ -28,12 +28,18 @@ function Level5({ progressToNextLevel }) {
       const newBoxes = [...boxes];
       newBoxes[index] = true;
       setBoxes(newBoxes);
+
+      setTimeout(() => {
+        newBoxes[index] = false;  // Reset the clicked box state after 1 second
+        setBoxes(newBoxes);
+        setShowFeedback(false);   // Hide feedback after 1 second
+      }, 1000);
     }
   };
   
 
   const handleCompletion = () => {
-    console.log("Congratulations! You've completed the treasure hunt!");
+    // console.log("Congratulations! You've completed the treasure hunt!");
     // You can also trigger an animation or effect here
     progressToNextLevel();
   };
