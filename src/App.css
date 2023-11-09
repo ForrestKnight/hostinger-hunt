@@ -1,7 +1,7 @@
 .App {
   font-family: 'Fira Code', monospace;
   text-align: center;
-  height: 100vh;  /* Fill the entire screen */
+  min-height: 100vh;  /* Fill the entire screen */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,6 +67,9 @@
 
   .header-container h1 {
     font-size: 5vw; /* Adjust font size based on the width of the viewport */
+  }
+
+  .container {
   }
 }
 

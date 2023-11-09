@@ -84,19 +84,12 @@ h3 {
   .words-to-find-grid {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjust the min size as needed */
     justify-items: start;
-    padding: 0 5vw; /* Add some padding on the sides */
+    grid-gap: 2px;
+    margin: 0px auto;
   }
-
-  .word-item {
-    padding: 5px; /* Add padding to each word item if needed */
-  }
-
-  .grid-row {
-    justify-content: start;
-  }
-}
-
-/* Adjust the root font-size if necessary to control overall scaling */
-html {
-  font-size: 14px; /* Adjust base font size for mobile */
+  
+   html {
+      font-size: 14px; /* Adjust base font size for mobile */
+   }
+  
 }
