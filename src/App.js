@@ -108,7 +108,7 @@ function App() {
           <div className="video-container">
             <iframe 
               title="Congratulations! You're a Winner!"   
-              src="GRAND_REVEAL" 
+              src={process.env.REACT_APP_GRAND_REVEAL} 
               width="560" 
               height="315"
               style={{ opacity: videoReveal ? 1 : 0, pointerEvents: videoReveal ? 'auto' : 'none' }}
