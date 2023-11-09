@@ -68,9 +68,6 @@
   .header-container h1 {
     font-size: 5vw; /* Adjust font size based on the width of the viewport */
   }
-
-  .container {
-  }
 }
 
 .App-header {
