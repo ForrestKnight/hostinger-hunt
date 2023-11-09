@@ -53,3 +53,13 @@
 @keyframes revealLetter {
    100% { opacity: 1; }
 }
+
+@media only screen and (max-width: 768px) {
+   .textarea {
+      width: 82%;
+   }
+   
+   .matrix-style {
+      width: 80%; 
+   }
+}

@@ -33,17 +33,40 @@
 
 /* Mobile View */
 @media only screen and (max-width: 768px) {
-  .challenge-container {
-    padding: 20px;
+
+  .back-button {
+    position: absolute;
+    top: 50% !important; /* Adjust this value as needed to position the button from the top */
+    left: 60px !important; /* Adjust this value as needed to position the button from the left */
+    transform: none; /* Remove the transform */
   }
 
-  .challenge-row {
-    flex-direction: column;
-    align-items: center;
+  .challenge-container {
+    padding: 10px;
   }
 
   .challenge-item {
-    margin-bottom: 20px; /* space between stacked challenges */
+    width: 60px !important; /* Half of the original size */
+    height: 60px !important; /* Half of the original size */
+    margin: 0 7.5px; /* Adjusted margin */
+    margin-bottom: 15px; /* Half of the original size */
+  }
+
+  .icon {
+    font-size: 1.5em; /* Adjusted font size */
+  }
+
+  .progress-container {
+    width: 80% !important; /* Full width of the screen */
+    padding: 0 10px; /* Add padding if needed */
+  }
+
+  .progress-bar {
+    height: 10px; /* Adjust height */
+  }
+
+  .header-container h1 {
+    font-size: 5vw; /* Adjust font size based on the width of the viewport */
   }
 }
 
@@ -111,7 +134,7 @@
   margin: 20px auto; /* Centering the progress bar horizontally */
   border-radius: 10px; /* Rounded corners */
   position: relative; /* To position the vertical lines */
-  overflow: hidden;     /* Ensures that the inner progress bar also has rounded ends */
+
 }
 
 .progress-bar {

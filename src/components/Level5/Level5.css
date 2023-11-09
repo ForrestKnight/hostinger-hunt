@@ -32,3 +32,10 @@
 .box.open {
   background-color: #FFBE1A;
 }
+
+@media only screen and (max-width: 768px) {
+  .box {
+    width: 70px;
+    height: 70px;
+  }
+}

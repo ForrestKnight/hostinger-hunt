@@ -39,3 +39,17 @@
   background-color: #FFBE1A;
   color: #212121;  /* Changing text color to contrast against the gold background */
 }
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Four cards in a row */
+    gap: 12px; /* Spacing between cards */
+    margin: 10px auto; 
+  }
+}

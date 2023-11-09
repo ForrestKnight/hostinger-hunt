@@ -95,13 +95,13 @@ function App() {
       <div className={`challenge-container ${rowsMoved ? "rows-moved" : ""} ${videoReveal ? "video-reveal" : ""}`}>
         <div className="challenge-row top-row">
           <div className={`challenge-item ${progressArray[0] ? "completed" : ""}`} id="challenge1" onClick={() => setViewedChallenge(1)}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} size="3x"/>       
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="3x" className="icon" />       
           </div>
           <div className={`challenge-item ${progressArray[1] ? "completed" : ""}`} id="challenge2" onClick={() => setViewedChallenge(2)}>
-            <FontAwesomeIcon icon={faFingerprint} size="3x" />
+            <FontAwesomeIcon icon={faFingerprint} size="3x" className="icon" />
           </div>
           <div className={`challenge-item ${progressArray[2] ? "completed" : ""}`} id="challenge3" onClick={() => setViewedChallenge(3)}>
-            <FontAwesomeIcon icon={faTerminal} size="3x" />
+            <FontAwesomeIcon icon={faTerminal} size="3x" className="icon" />
           </div>
         </div>
         {videoReveal && 
@@ -118,10 +118,10 @@ function App() {
         }
         <div className="challenge-row bottom-row">
           <div className={`challenge-item ${progressArray[3] ? "completed" : ""}`} id="challenge4" onClick={() => setViewedChallenge(4)}>
-            <FontAwesomeIcon icon={faMemory} size="3x" />
+            <FontAwesomeIcon icon={faMemory} size="3x" className="icon" />
           </div>
           <div className={`challenge-item ${progressArray[4] ? "completed" : ""}`} id="challenge5" onClick={() => setViewedChallenge(5)}>
-            <FontAwesomeIcon icon={faBoxOpen} size="3x" />
+            <FontAwesomeIcon icon={faBoxOpen} size="3x" className="icon" />
           </div>
         </div>
       </div>

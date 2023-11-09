@@ -25,8 +25,8 @@ h3 {
    grid-template-columns: repeat(5, 1fr);  /* Creates 5 columns */
    grid-gap: 10px;
    justify-items: center;
-   max-width: 620px;
    margin: 20px auto;
+   width: calc(100% - 60px); /* Adjust the 60px to match the actual padding */
 }
 
 .word-item {
@@ -65,4 +65,38 @@ h3 {
 
 .grid-letter.success {
    color: #FFBE1A;
+}
+
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+  .word-grid {
+    max-width: 90vw; /* Set a max-width that suits mobile */
+    margin: 10px auto;
+  }
+
+  .grid-letter {
+    width: 7.5vw; /* Each letter is 7.5% of the viewport width */
+    height: 7.5vw; /* Same for height to maintain a square */
+    font-size: 3.5vw; /* Adjust font size accordingly */
+    line-height: 7.5vw; /* Center the letter vertically */
+  }
+
+  .words-to-find-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjust the min size as needed */
+    justify-items: start;
+    padding: 0 5vw; /* Add some padding on the sides */
+  }
+
+  .word-item {
+    padding: 5px; /* Add padding to each word item if needed */
+  }
+
+  .grid-row {
+    justify-content: start;
+  }
+}
+
+/* Adjust the root font-size if necessary to control overall scaling */
+html {
+  font-size: 14px; /* Adjust base font size for mobile */
 }

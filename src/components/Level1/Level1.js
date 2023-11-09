@@ -4,7 +4,7 @@ import './Level1.css';
 function Level1({ progressToNextLevel }) {
     const [selectedWord, setSelectedWord] = useState("");
     const [selectedPositions, setSelectedPositions] = useState([]);
-    const wordsToFind = ["CODE", "HOST", "WEB", "HTML", "SERVER", "DOMAIN", "DEVNOTES", "JAVASCRIPT", "DATABASE", "NETWORK"];
+    const wordsToFind = ["CODE", "HOST", "DATABASE", "DEVNOTES", "SERVER", "DOMAIN", "HTML", "NETWORK", "WEB", "JAVASCRIPT"];
     const [foundWords, setFoundWords] = useState([]);
 
     const grid = [
