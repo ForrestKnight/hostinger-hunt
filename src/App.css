@@ -58,7 +58,6 @@
 
   .progress-container {
     width: 80% !important; /* Full width of the screen */
-    padding: 0 10px; /* Add padding if needed */
   }
 
   .progress-bar {
@@ -134,7 +133,7 @@
   margin: 20px auto; /* Centering the progress bar horizontally */
   border-radius: 10px; /* Rounded corners */
   position: relative; /* To position the vertical lines */
-
+  overflow: hidden; /* Ensures that the inner progress bar also has rounded ends */
 }
 
 .progress-bar {
